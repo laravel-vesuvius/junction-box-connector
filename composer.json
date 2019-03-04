@@ -1,0 +1,34 @@
+{
+    "name": "apn/your_package_name",
+    "type": "library",
+    "description": ":package_description",
+    "license": "MIT",
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "~5.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "APN\\YourConnectorNamespace\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "APN\\YourConnectorNamespace\\YourServiceProvider"
+            ]
+        }
+    }
+}
