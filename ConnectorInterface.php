@@ -19,15 +19,23 @@ interface ConnectorInterface
     public function authHeaders(): array;
 
     /**
-     * Send the request to the remote endpoint
+     * Method is responsible for sending the request to the 
+     * remote endpoint and should return the entire response
+     * object.
      *
-     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @return \Psr\Http\Message\ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function doRequest();
 
     /**
-     * Pull data out of the response from the endpoint
+     * Method is responsible for extracting data out of a
+     * response object.
+     *
+     * e.g return json_decode(
+     *                $this->doRequest('endpoint', 'GET')
+     *                ->getBody()
+     *                ->getContents(), true)['item'];
      *
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -35,7 +43,7 @@ interface ConnectorInterface
     public function getData(): array;
 
     /**
-     * Generate the response property map
+     * Method is responsible for transforming the data.
      *
      * e.g return ['FirstName' => $data['first_name'],...];
      * e.g return $data;
