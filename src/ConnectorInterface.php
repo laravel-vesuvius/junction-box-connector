@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Contracts;
+namespace APN\FreshSales;
+
+use GuzzleHttp\Psr7\Response;
 
 interface ConnectorInterface
 {
@@ -19,14 +21,15 @@ interface ConnectorInterface
     public function authHeaders(): array;
 
     /**
-     * Method is responsible for sending the request to the 
+     * Method is responsible for sending the request to the
      * remote endpoint and should return the entire response
      * object.
      *
+     * @param string $endpoint
+     * @param string $method
      * @return \Psr\Http\Message\ResponseInterface
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function doRequest();
+    public function send(string $endpoint, string $method);
 
     /**
      * Method is responsible for extracting data out of a
@@ -37,10 +40,10 @@ interface ConnectorInterface
      *                ->getBody()
      *                ->getContents(), true)['item'];
      *
+     * @param Response $data
      * @return array
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getData(): array;
+    public function getData(Response $data): array;
 
     /**
      * Method is responsible for transforming the data.
@@ -51,7 +54,7 @@ interface ConnectorInterface
      * @param $data
      * @return array
      */
-    public function parse($data): array;
+    public function parse(array $data): array;
 
     /**
      * Set a unique key for this data collection for caching purposes

@@ -1,0 +1,5 @@
+.idea/
+/vendor
+.phpstorm.meta.php
+package-lock.json
+.env

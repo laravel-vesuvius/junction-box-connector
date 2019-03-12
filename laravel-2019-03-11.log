@@ -1,0 +1,22 @@
+[2019-03-11 12:13:09] local.INFO: Array
+(
+    [0] => stdClass Object
+        (
+            [full_name] => Jane Sampleton (sample)
+            [company] => Widgetz.io (sample)
+            [email] => janesampleton@gmail.com
+            [phone] => 1-926-652-9503
+            [address] => 604-5854 Beckford St. Glendale Arizona 100652
+        )
+
+    [1] => stdClass Object
+        (
+            [full_name] => testFirst testLast
+            [company] => Company
+            [email] => wqe@dada.dada
+            [phone] => 123456789
+            [address] => eqweqwe q weqe qwe123
+        )
+
+)
+  
