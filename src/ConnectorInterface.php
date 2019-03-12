@@ -1,6 +1,6 @@
 <?php
 
-namespace APN\FreshSales;
+namespace APN;
 
 use GuzzleHttp\Psr7\Response;
 

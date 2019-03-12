@@ -2,6 +2,7 @@
 
 namespace APN\FreshSales;
 
+use APN\ConnectorInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;

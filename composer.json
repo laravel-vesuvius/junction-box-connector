@@ -1,18 +1,21 @@
 {
-    "name": "apn/your_package_name",
+    "name": "apn/freshsales",
     "type": "library",
     "description": ":package_description",
     "license": "MIT",
     "require": {
         "php": "^7.1",
-        "illuminate/support": "~5.7"
+        "guzzlehttp/guzzle": "~6.0",
+        "illuminate/support": "~5.7",
+        "ext-json": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0"
     },
     "autoload": {
         "psr-4": {
-            "APN\\YourConnectorNamespace\\": "src"
+            "APN\\FreshSales\\": "src/FreshSales",
+            "APN\\": "src"
         }
     },
     "scripts": {
@@ -27,7 +30,7 @@
         },
         "laravel": {
             "providers": [
-                "APN\\YourConnectorNamespace\\YourServiceProvider"
+                "APN\\FreshSales\\FreshSalesServiceProvider"
             ]
         }
     }

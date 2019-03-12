@@ -2,6 +2,7 @@
 
 namespace APN\FreshSales;
 
+use APN\ConnectorInterface;
 use Illuminate\Support\ServiceProvider;
 
 class FreshSalesServiceProvider extends ServiceProvider
